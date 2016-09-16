@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+//CODIGO V1.6
+
+int main()
+{   char matriz[100][100],palavras[100][100]; //matriz do caca palavras e palavras que vao ser buscadas.
+    int i,j,k,l; //Contadores.
+    int ocorrencia;
+
+    printf("CACA PALAVRAS 3000\nDIGITE O TAMANHO DO CACA PALAVRAS( TAMxTAM e MAX 100x100 ):");
+    scanf("%d", &l);
+
+    printf("DIGITE AS LETRAS DO CACA PALAVRAS:\n");
+    for(i=0;i<l;i++){
+    scanf("%s", matriz[i]);}
+
+    printf("DIGITE QUANTAS PALAVRAS DESEJA BUSCAR:");
+    scanf("%d", &k);
+    printf("DIGITE A PALAVRA QUE DESEJA BUSCAR:");
+    for(i=0;i<k;i++){
+    scanf("%s", palavras[i]);}
+    
+    
+    
+    
+    return 0;
+}
