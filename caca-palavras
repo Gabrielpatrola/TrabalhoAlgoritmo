@@ -4,8 +4,8 @@
 
 int main()
 {
-    char matriz[100][100],palavras[100][100]; //matriz do caca palavras e palavras que vao ser buscadas.
-    int i,j,k,l,t,quant,tam; //Contadores.
+    char matriz[100][100],palavras[100][100];
+    int i,j,k,l,t,quant,tam;
     int ocorrencia;
 
     printf("CACA PALAVRAS 3000\nDIGITE O TAMANHO DO CACA PALAVRAS( TAMxTAM e MAX 100x100 ):");
@@ -144,5 +144,4 @@ for (k=0;k<tam;k++)
     }
 
 
-}
 }
