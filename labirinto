@@ -1,0 +1,115 @@
+                         #include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main()
+{
+
+
+
+    int labirinto[100][100],linha,coluna,a,b,c,d,linha_inicial,coluna_inicial,linha_parede,coluna_parede;
+
+    setlocale(LC_ALL,"Portuguese");
+
+
+
+    printf("Informe o tamanho da matriz(Linhas e colunas)\n");
+    scanf("%d%d",&linha,&coluna);
+
+    printf("Informe todos os valores de suas posições(Cada uma delas)\n");
+    printf("Para caminho informe 1\n");
+    printf("Para parede informe 2\n");
+    printf("Para saida informe 3\n");
+    printf("Para caminho quebrado 4\n");
+    printf("Para inicio informe 5(apenas um inicio)\n");
+    linha++;
+    coluna++;
+    for(a=1;a<linha;a++)
+    {
+    for(b=1;b<coluna;b++)
+    {
+    printf("informe o que será na posição[%d][%d]",a,b);
+    scanf("%d",&labirinto[a][b]);
+    if(labirinto[a][b]==5)
+    {
+    linha_inicial=a;
+    coluna_inicial=b;
+    printf("O seu cego vai começar na posição[%d][%d]\n",linha_inicial,coluna_inicial);
+    }
+    }
+    }
+    linha_parede=linha+1;
+    coluna_parede=coluna+1;
+    for(c=0;c<linha_parede;c++)
+    {
+    labirinto[0][c]=0;
+    labirinto[linha_parede][c]=0;
+    }
+    for(d=0;d<coluna_parede;d++)
+    {
+    labirinto[d][0]=0;
+    labirinto[d][coluna_parede]=0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+if     (labirinto[linha_inicial-1]  [coluna_inicial]!=0    &&   /*norte*/   labirinto[linha_inicial-1]  [coluna_inicial]!=2    &&  labirinto[linha_inicial-1][coluna_inicial]!=4)
+{
+linha_inicial--;
+printf("O cego esta na posição[%d][%d]",linha_inicial,coluna_inicial);
+}
+else if(labirinto[linha_inicial-1]  [coluna_inicial+1]!=0  &&/*nordeste*/labirinto[linha_inicial-1]  [coluna_inicial+1]!=2  &&  labirinto[linha_inicial-1][coluna_inicial]!=4)
+{
+linha_inicial--;
+coluna_inicial++;
+printf("O cego esta na posição[%d][%d]",linha_inicial,coluna_inicial);
+}
+else if(labirinto[linha_inicial]    [coluna_inicial+1]!=0  &&/*leste*/   labirinto[linha_inicial]    [coluna_inicial+1]!=2  &&  labirinto[linha_inicial-1][coluna_inicial]!=4)
+{
+coluna_inicial++;
+printf("O cego esta na posição[%d][%d]",linha_inicial,coluna_inicial);
+}
+else if(labirinto[linha_inicial+1]  [coluna_inicial+1]!=0  &&/*sudeste*/ labirinto[linha_inicial+1]  [coluna_inicial+1]!=2  &&  labirinto[linha_inicial-1][coluna_inicial]!=4)
+{
+linha_inicial++;
+coluna_inicial++;
+printf("O cego esta na posição[%d][%d]",linha_inicial,coluna_inicial);
+}
+else if(labirinto[linha_inicial+1]  [coluna_inicial]!=0    &&/*sul*/     labirinto[linha_inicial+1]  [coluna_inicial]!=2    &&  labirinto[linha_inicial-1][coluna_inicial]!=4)
+{
+linha_inicial++;
+printf("O cego esta na posição[%d][%d]",linha_inicial,coluna_inicial);
+}
+else if(labirinto[linha_inicial+1]  [coluna_inicial-1]!=0  &&/*sudoeste*/labirinto[linha_inicial+1]  [coluna_inicial-1]!=2  &&  labirinto[linha_inicial-1][coluna_inicial]!=4)
+{
+linha_inicial++;
+coluna_inicial--;
+printf("O cego esta na posição[%d][%d]",linha_inicial,coluna_inicial);
+}
+else if(labirinto[linha_inicial]    [coluna_inicial-1]!=0  &&  coluna!=coluna++  &&/*oeste*/   labirinto[linha_inicial]    [coluna_inicial-1]!=2  &&  labirinto[linha_inicial-1][coluna_inicial]!=4)
+{
+coluna_inicial--;
+printf("O cego esta na posição[%d][%d]",linha_inicial,coluna_inicial);
+}
+else if(labirinto[linha_inicial-1]  [coluna_inicial-1]!=0  &&  coluna!=coluna++  &&/*noroeste*/labirinto[linha_inicial-1]  [coluna_inicial-1]!=2  &&  labirinto[linha_inicial-1][coluna_inicial]!=4)
+{
+linha_inicial--;
+coluna_inicial--;
+printf("O cego esta na posição[%d][%d]",linha_inicial,coluna_inicial);
+}
+else
+{
+printf("O cego morreu na posição[%d][%d]",linha_inicial,coluna_inicial);
+}
+
+return 0;
+}
