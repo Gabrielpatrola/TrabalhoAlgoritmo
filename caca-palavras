@@ -8,7 +8,7 @@ int main()
     int i,j,k,l,t,quant,tam;
     int ocorrencia;
 
-    printf("CACA PALAVRAS 3000\nDIGITE O TAMANHO DO CACA PALAVRAS( TAMxTAM e MAX 100x100 ):");
+    printf("CACA PALAVRAS 3000\nDIGITE O TAMANHO DO CACA PALAVRAS(MAX 100x100 ):");
     scanf("%d", &tam);
 
     printf("DIGITE AS LETRAS DO CACA PALAVRAS:\n");
