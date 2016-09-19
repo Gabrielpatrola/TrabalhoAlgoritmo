@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+//versao finale edition ultrablaster popstar
 int main()
 {
     char matriz[100][100],palavras[100][100];
