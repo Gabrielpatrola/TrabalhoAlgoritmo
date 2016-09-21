@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//versao finale edition ultrablaster popstar
+//CAÇA PALAVRAS BOLADÃO VERSION FINALE ULTRA MEGA POP STAR BLASTER EDITION.
+//TIME: GABRIEL AUGUSTO ALMEIDA E TIAGO ALVES DA SILVA.
 int main()
 {
     char matriz[100][100],palavras[100][100];
-    int i,j,k,l,t,quant,tam;
+    int i,j,k,l,m,quant,tam;
     int ocorrencia;
 
     printf("CACA PALAVRAS 3000\nDIGITE O TAMANHO DO CACA PALAVRAS(MAX 100x100 ):");
@@ -51,8 +52,8 @@ for (k=0;k<tam;k++)
                     {
                         ocorrencia = 1;
 
-                        for (t=0;t<strlen(palavras[k]);t++)
-                            if (palavras[k][t]!=matriz[i+t][j])
+                        for (m=0;m<strlen(palavras[k]);m++)
+                            if (palavras[k][m]!=matriz[i+m][j])
                                 ocorrencia=0;
 
                         if (ocorrencia)
@@ -63,8 +64,8 @@ for (k=0;k<tam;k++)
                     {
                         ocorrencia=1;
 
-                        for (t=0;t<strlen(palavras[k]);t++)
-                            if (palavras[k][t]!=matriz[i][j+t])
+                        for (m=0;m<strlen(palavras[k]);m++)
+                            if (palavras[k][m]!=matriz[i][j+m])
                                 ocorrencia=0;
 
                         if (ocorrencia)
@@ -75,8 +76,8 @@ for (k=0;k<tam;k++)
                     {
                        ocorrencia=1;
 
-                        for (t=0; t<strlen(palavras[k]); t++)
-                            if (palavras[k][t] != matriz[i][j - t])
+                        for (m=0; m<strlen(palavras[k]); m++)
+                            if (palavras[k][m] != matriz[i][j - m])
                                 ocorrencia = 0;
 
                         if (ocorrencia)
@@ -87,8 +88,8 @@ for (k=0;k<tam;k++)
                     {
                         ocorrencia = 1;
 
-                        for (t = 0; t < strlen(palavras[k]); t++)
-                            if (palavras[k][t] != matriz[i - t][j + t])
+                        for (m = 0; m < strlen(palavras[k]); m++)
+                            if (palavras[k][m] != matriz[i - m][j + m])
                                 ocorrencia= 0;
 
                         if (ocorrencia)
@@ -99,8 +100,8 @@ for (k=0;k<tam;k++)
                     {
                         ocorrencia = 1;
 
-                        for (t = 0; t < strlen(palavras[k]); t++)
-                            if (palavras[k][t] != matriz[i - t][j - t])
+                        for (m = 0; m < strlen(palavras[k]); m++)
+                            if (palavras[k][m] != matriz[i - m][j - m])
                                 ocorrencia = 0;
 
                         if (ocorrencia)
@@ -111,8 +112,8 @@ for (k=0;k<tam;k++)
                     {
                         ocorrencia = 1;
 
-                        for (t = 0; t < strlen(palavras[k]); t++)
-                            if (palavras[k][t] != matriz[i + t][j + t])
+                        for (m = 0; m < strlen(palavras[k]); m++)
+                            if (palavras[k][m] != matriz[i + m][j + m])
                                 ocorrencia = 0;
 
                         if (ocorrencia)
@@ -123,8 +124,8 @@ for (k=0;k<tam;k++)
                     {
                         ocorrencia = 1;
 
-                        for (t = 0; t < strlen(palavras[k]); t++)
-                            if (palavras[k][t] != matriz[i + t][j - t])
+                        for (m = 0; m < strlen(palavras[k]); m++)
+                            if (palavras[k][m] != matriz[i + m][j - m])
                                 ocorrencia = 0;
 
                         if (ocorrencia)
@@ -137,11 +138,11 @@ for (k=0;k<tam;k++)
                 break;
         }
          if (ocorrencia)
-            printf("%s - PALAVRA ENCONTRADA NA POSICAO %d \n", palavras[k], matriz[i][j]);
+            printf("[%s] - PALAVRA ENCONTRADA NA LINHA [%d] E COLUNA [%d] \n", palavras[k],i,j);
         else
-            printf("%s - PALAVRA NAO ENCONTRADA\n", palavras[k]);
+            printf("[%s] - PALAVRA NAO ENCONTRADA\n", palavras[k]);
 
     }
 
-
+return 0;
 }
